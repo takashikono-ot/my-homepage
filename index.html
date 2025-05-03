@@ -63,6 +63,12 @@
       padding-left: 1.5em;
     }
 
+    /* OOOsをやってみるボタン用コンテナ */
+    .button-container {
+      text-align: center;
+      margin-top: 2em;
+    }
+
     /* オーズくん画像を右下に表示 */
     .ooos-image {
       position: fixed;
@@ -78,7 +84,7 @@
   <p>このページではOOOs（オーズ）をおこなって，潜在ランク診断ができます．</p>
 
   <details>
-    <summary>▶ OOOsとは？</summary>
+    <summary> OOOsとは？</summary>
     <p>OOOsは，作業中心・作業焦点・作業基盤実践尺度（Occupation-Centered, Occupation-Focused, and Occupation-Based Practice Scale）のことです．</p>
     <p>作業中心実践（Occupation-Centered Practice：OCP），作業焦点実践（Occupation-Focused Practice：OFP），作業基盤実践（Occupation-Based Practice：OBP）を行う知識やスキルがどのくらいかを調べるために作りました．</p>
     <p>この尺度におけるOCP・OFP・OBPの定義は以下のように考えています．</p>
@@ -91,12 +97,12 @@
     <p>是非，試してみてください．</p>
   </details>
 
-  <a href="https://your-app.netlify.app" class="button" target="_blank">
-    OOOsをやってみる
-  </a>
+  <div class="button-container">
+    <a href="https://ooos-frontend.netlify.app" class="button" target="_blank" rel="noopener">
+      OOOsをやってみる
+    </a>
+  </div>
 
-  <!-- オーズくん画像 -->
-  <img src="ほほえみオーズくん２.png" alt="オーズくん" class="ooos-image">
-
+  <img src="./ほほえみオーズくん２.png" alt="オーズくん" class="ooos-image">
 </body>
 </html>
