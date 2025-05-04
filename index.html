@@ -63,11 +63,29 @@
       padding-left: 1.5em;
     }
 
-    /* OOOsをやってみるボタン用コンテナ */
-    .button-container {
-      text-align: center;
-      margin-top: 2em;
-    }
+   /* OOOsをやってみるボタン */
+a.button {
+  display: inline-block;
+  background-color: #26466d;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 8px;
+  /* 追加：トランジションを拡張 */
+  transition: background-color 0.3s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+a.button:hover {
+  /* 背景色の変化（もともとの設定） */
+  background-color: #1e3755;
+  /* 追加：わずかに持ち上げる */
+  transform: translateY(-3px);
+  /* 追加：影を強めて浮遊感を演出 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 
     /* オーズくん画像を右下に表示 */
     .ooos-image {
