@@ -88,14 +88,35 @@ a.button:hover {
 }
 
     /* オーズくん画像を右下に表示 */
-    .ooos-image {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 120px;
-      z-index: 10;
-    }
-  </style>
+   .ooos-image-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  z-index: 10;
+}
+
+.ooos-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.ooos-image.waving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ooos-image-wrapper:hover .waving {
+  opacity: 1;
+}
+
+.ooos-image-wrapper:hover .default {
+  opacity: 0;
+}
+
+</style>
 </head>
 <body>
   <h1>ようこそ！</h1>
@@ -142,8 +163,10 @@ a.button:hover {
       OOOsをやってみる
     </a>
   </div>
-
-<img src="./ほほえみオーズくん２.png" alt="オーズくん" class="ooos-image">
+<div class="ooos-image-wrapper">
+  <img src="./ほほえみオーズくん２.png" alt="オーズくん" class="ooos-image default">
+  <img src="./OOOSくんwave_gif用_透過.gif" alt="オーズくん手ふり" class="ooos-image waving">
+</div>
 <footer>
     <p style="font-size:1.0em; color:#888; text-align:center; margin-top:3em;">
       © 2025 河野 崇（Takashi Kono）　✉ onogoroman@gmail.com
