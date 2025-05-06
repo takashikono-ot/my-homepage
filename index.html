@@ -87,19 +87,22 @@ a.button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-    /* オーズくん画像を右下に表示 */
-   .ooos-image-wrapper {
+
+/* オーズくん画像を右下に表示 */
+.ooos-image-wrapper {
   position: fixed;
-  bottom: 120px;
+  bottom: 130px;
   right: 100px;
-  width: 120px;
+  width: 140px;      /* ← 幅を統一 */
+  height: 140px;     /* ← 高さも明示 */
   z-index: 10;
 }
 
 .ooos-image {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain; /* ← 画像を枠内にフィットさせる */
   transition: opacity 0.3s ease;
 }
 
@@ -115,6 +118,7 @@ a.button:hover {
 .ooos-image-wrapper:hover .default {
   opacity: 0;
 }
+
 
 </style>
 </head>
