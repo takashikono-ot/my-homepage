@@ -34,11 +34,13 @@
       font-size: 1.2em;
       text-decoration: none;
       border-radius: 8px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     a.button:hover {
       background-color: #1e3755;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     details {
@@ -63,64 +65,37 @@
       padding-left: 1.5em;
     }
 
-   /* OOOsをやってみるボタン */
-a.button {
-  display: inline-block;
-  background-color: #26466d;
-  color: #fff;
-  padding: 12px 24px;
-  font-size: 1.2em;
-  text-decoration: none;
-  border-radius: 8px;
-  /* 追加：トランジションを拡張 */
-  transition: background-color 0.3s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease;
-}
+    /* オーズくん画像を右下に表示 */
+    .ooos-image-wrapper {
+      position: fixed;
+      bottom: 75px;
+      right: 110px;
+      width: 180px;
+      height: 180px;
+      z-index: 10;
+    }
 
-a.button:hover {
-  /* 背景色の変化（もともとの設定） */
-  background-color: #1e3755;
-  /* 追加：わずかに持ち上げる */
-  transform: translateY(-3px);
-  /* 追加：影を強めて浮遊感を演出 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
+    .ooos-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
 
+    .ooos-image.waving {
+      opacity: 0;
+      pointer-events: none;
+    }
 
-/* オーズくん画像を右下に表示 */
-.ooos-image-wrapper {
-  position: fixed;
-  bottom: 75px;
-  right: 110px;
-  width: 180px;      /* ← 幅を統一 */
-  height: 180px;     /* ← 高さも明示 */
-  z-index: 10;
-}
+    .ooos-image-wrapper:hover .waving {
+      opacity: 1;
+    }
 
-.ooos-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* ← 画像を枠内にフィットさせる */
-  transition: opacity 0.3s ease;
-}
-
-.ooos-image.waving {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.ooos-image-wrapper:hover .waving {
-  opacity: 1;
-}
-
-.ooos-image-wrapper:hover .default {
-  opacity: 0;
-}
-
-
-</style>
+    .ooos-image-wrapper:hover .default {
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
   <h1>ようこそ！</h1>
@@ -141,43 +116,42 @@ a.button:hover {
   </details>
 
   <details>
-  <summary>お願いと手順について</summary>
-  <p>この度は、OOOs（Occupation-Centered, Occupation-Focused, and Occupation-Based Practice Scale）にご興味を持っていただき、ありがとうございます。</p>
-  <p>この「OOOs潜在ランクチェック」でご回答いただいたデータは、研究への活用や潜在ランク推定の精度を高めるために使わせていただけると大変ありがたいです。</p>
+    <summary>お願いと手順について</summary>
+    <p>この度は、OOOs（Occupation-Centered, Occupation-Focused, and Occupation-Based Practice Scale）にご興味を持っていただき、ありがとうございます。</p>
+    <p>この「OOOs潜在ランクチェック」でご回答いただいたデータは、研究への活用や潜在ランク推定の精度を高めるために使わせていただけると大変ありがたいです。</p>
 
-  <p><strong>① 研究利用へのご協力について</strong><br>
-  「OOOsをやってみる」ボタンを押したあとに、研究利用に関するご確認の画面が表示されます。  
-  「はい」または「いいえ」をお選びください。  
-  もちろん、「データは使ってほしくないな」と思われた場合は「いいえ」を選んでいただいて大丈夫です。その場合、ご入力いただいたデータは使用せず、削除します。</p>
+    <p><strong>① 研究利用へのご協力について</strong><br>
+    「OOOsをやってみる」ボタンを押したあとに、研究利用に関するご確認の画面が表示されます。
+    「はい」または「いいえ」をお選びください。
+    もちろん、「データは使ってほしくないな」と思われた場合は「いいえ」を選んでいただいて大丈夫です。その場合、ご入力いただいたデータは使用せず、削除します。</p>
 
-  <p><strong>② 作業療法に関する簡単な質問</strong><br>
-  OOOsは、作業療法士の方の実践を想定した内容になっています。  
-  そのため、経験年数や現在どのような領域で仕事をしているかなど、簡単な質問にもお答えいただきます。</p>
+    <p><strong>② 作業療法に関する簡単な質問</strong><br>
+    OOOsは、作業療法士の方の実践を想定した内容になっています。
+    そのため、経験年数や現在どのような領域で仕事をしているかなど、簡単な質問にもお答えいただきます。</p>
 
-  <p><strong>③ OOOsの質問について</strong><br>
-  続いて、25個の質問項目にご回答いただきます。  
-  これは、作業中心実践（OCP）・作業焦点実践（OFP）・作業基盤実践（OBP）の3つの視点に関する自己評価です。</p>
+    <p><strong>③ OOOsの質問について</strong><br>
+    続いて、25個の質問項目にご回答いただきます。
+    これは、作業中心実践（OCP）・作業焦点実践（OFP）・作業基盤実践（OBP）の3つの視点に関する自己評価です。</p>
 
-  <p><strong>④ 結果の確認</strong><br>
-  最後に「結果を見る」ボタンを押すと、各得点と推定された潜在ランク（今は環境を構築中です！！）をご確認いただけます。</p>
-</details>
+    <p><strong>④ 結果の確認</strong><br>
+    最後に「結果を見る」ボタンを押すと、各得点と推定された潜在ランク（今は環境を構築中です！！）をご確認いただけます。</p>
+  </details>
 
   <div class="button-container">
-    <<a href="https://takashikono-ot.github.io/OOOs_frontend/app.html" class="button">OOOsをやってみる</a>>
+    <a href="https://takashikono-ot.github.io/OOOs_frontend/app.html" class="button">
       OOOsをやってみる
     </a>
   </div>
-<div class="ooos-image-wrapper">
-  <img src="./ほほえみオーズくん3.png" alt="オーズくん" class="ooos-image default">
-  <img src="./OOOSくんwave_gif用_透過.gif" alt="オーズくん手ふり" class="ooos-image waving">
-</div>
-<footer>
+
+  <div class="ooos-image-wrapper">
+    <img src="./ほほえみオーズくん3.png" alt="オーズくん" class="ooos-image default">
+    <img src="./OOOSくんwave_gif用_透過.gif" alt="オーズくん手ふり" class="ooos-image waving">
+  </div>
+
+  <footer>
     <p style="font-size:1.0em; color:#888; text-align:center; margin-top:3em;">
       © 2026 河野 崇（Takashi Kono）　✉ onogoroman@gmail.com
     </p>
   </footer>
 </body>
 </html>
-
-
-
